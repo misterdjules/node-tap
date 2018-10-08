@@ -1,6 +1,7 @@
 'use strict'
 const t = require('../')
 const Base = require('../lib/base.js')
+const domaine = require('domaine');
 
 t.test('basic base', t => {
   const b = new Base()
@@ -92,7 +93,7 @@ t.test('throwing stuff', t => {
 
   t.test('domain error', t => {
     const b = new Base({ name: 'ace', buffered: true })
-    b.domain.emit('error', new Error('this is fine'))
+    b[domaine.domaineSym].emit('error', new Error('this is fine'))
     t.notOk(b.parser.ok)
     t.end()
   })

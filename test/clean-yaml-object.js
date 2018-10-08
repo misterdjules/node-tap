@@ -1,8 +1,8 @@
 'use strict'
 const t = require('../')
 const cyo = require('../lib/clean-yaml-object.js')
-const Domain = require('domain').Domain
-const dom = new Domain()
+const Domaine = require('domaine').Domaine
+const dom = new Domaine()
 dom.whosagooddomain = 'yes you are a good dog'
 
 const cases = [
